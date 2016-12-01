@@ -1,0 +1,76 @@
+
+        <section id="patient" class="container">
+            
+            <fieldset >
+               <form name="patientForm" ng-submit='save()' class="form-horizontal">
+                <div class="form-group">
+                    <div class="col-md-6 col-md-offset-4">
+                        <div class="col-md-6"><h3>Patient Information</h3></div>
+                        <div class="col-md-6">
+                            <button class="btn btn-info pull-right" ng-click="goto_search()"><i class="fa fa-search" aria-hidden="true"></i>PatientList</button>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="form-group">
+                  <label for="name" class="col-md-2 col-md-offset-2 control-label">First Name:</label>
+                    <div class="col-md-6">
+                    <input type="name" ng-model="fname" class="form-control" id="Fname" placeholder="Enter First Name" required>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="name" class="col-md-2 col-md-offset-2 control-label">Last Name:</label>
+                    <div class="col-md-6">
+                        <input type="name" ng-model="lname" class="form-control" id="Lname" placeholder="Enter Last Name" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                  <label for="age" class="col-md-2 col-md-offset-2 control-label">Age:</label>
+                    <div class="col-md-6">
+                        <input type="age" ng-model="age" class="form-control" id="age" placeholder="Enter Age" required>
+                    </div>
+                </div>
+                <div class="form-group" >
+                  <label for="date" class="col-md-2 col-md-offset-2 control-label">DOB:</label>
+                    <div class="col-md-6">
+<!--                        <md-datepicker ng-model="dob" md-placeholder="dd/mm/yyyy" required></md-datepicker>-->
+                        <input type="date" class="form-control" ng-model="dob" id="exampleInputDOB1" placeholder="Date of Birth" ng-required="true">
+                    </div>
+                </div>
+                <div class="form-group">
+                  <label for="select111" class="col-md-2 col-md-offset-2 control-label">Gender</label>
+
+                  <div class="col-md-6">
+                    <select class="form-control" ng-model="gender">
+                      <option>Male</option>
+                      <option>Female</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="phone" class="col-md-2 col-md-offset-2 control-label">Phone:</label>
+                    <div class="col-md-6">
+                        <input type="text" ng-model="phone" class="form-control" id="dob" placeholder="+91-xxx-xxxxx" ng-pattern="phoneNumbr" ng-required="true"> 
+                        <div class="help-block" ng-messages="PatientStorage.phone.$error">
+                        <p ng-message="required">Phone number is required.</p>
+                        <p ng-message="pattern">Phone number is invalid.</p>
+                      </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                  <label for="textArea" class="col-md-2 col-md-offset-2 control-label">Textarea:</label>
+
+                  <div class="col-md-6">
+                    <textarea class="form-control" ng-model="add" rows="3" id="textArea"></textarea>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-md-6 col-md-offset-4">
+                    <button type="reset" class="btn btn-default">Reset</button>
+                    <button type="submit" class="btn btn-primary" ng-click="resetForm(fname,lname,age,dob,gender,phone,add)">Submit</button>
+                  </div>
+                </div>
+              </form>
+            </fieldset>
+        </section>
